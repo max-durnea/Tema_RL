@@ -296,7 +296,7 @@ def icmp_check_arrival_p(testname, packets):
 
 Test = namedtuple("Test", ["host_s", "host_r", "router", "active_fn", "passive_fn", "categories", "host_p"])
 TESTS = OrderedDict([
-        
+
         # MAC table tests
         ("ICMP_0_2_ARRIVES_2", Test(0, 2, 0, icmp_a, icmp_check_arrival_p, ["1. learning"], 2)),
         ("ICMP_0_3_ARRIVES_3", Test(0, 3, 0, icmp_a, icmp_check_arrival_p, ["1. learning"], 3)),
@@ -304,10 +304,16 @@ TESTS = OrderedDict([
         ("ICMP_0_3_NOT_ARRIVES_2", Test(0, 2, 0, icmp_a, icmp_check_no_arrival_p, ["1. learning"], 3)),
 
         # VLAN tests
+        ("ICMP_0_2_ARRIVES_1_VLAN", Test(0, 2, 0, icmp_a, icmp_check_arrival_p, ["2. VLAN"], 2)),
+        ("ICMP_3_5_ARRIVES_2_VLAN", Test(3, 5, 0, icmp_a, icmp_check_arrival_p, ["2. VLAN"], 5)),
+        ("ICMP_1_4_ARRIVES_3_VLAN", Test(1, 4, 0, icmp_a, icmp_check_arrival_p, ["2. VLAN"], 4)),
+
         ("ICMP_0_1_NOT_ARRIVES_1_VLAN", Test(0, 1, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 1)),
-        ("ICMP_3_1_NOT_ARRIVES_1_VLAN", Test(3, 1, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 1)),
-        ("ICMP_3_2_ARRIVES_2_VLAN", Test(3, 2, 0, icmp_a, icmp_check_arrival_p, ["2. VLAN"], 2)),
-        ("ICMP_0_3_ARRIVES_3_VLAN", Test(0, 3, 0, icmp_a, icmp_check_arrival_p, ["2. VLAN"], 3)),
+        ("ICMP_0_3_NOT_ARRIVES_1_VLAN", Test(0, 3, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 3)),
+        ("ICMP_3_2_NOT_ARRIVES_2_VLAN", Test(3, 2, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 2)),
+        ("ICMP_3_4_NOT_ARRIVES_2_VLAN", Test(3, 4, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 4)),
+        ("ICMP_4_5_NOT_ARRIVES_3_VLAN", Test(4, 5, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 5)),
+        ("ICMP_4_0_NOT_ARRIVES_3_VLAN", Test(4, 0, 1, icmp_a, icmp_check_no_arrival_p, ["2. VLAN"], 0)),
 
         # STP tests
         ("ICMP_4_1_ARRIVES_1_STP", Test(4, 1, 0, icmp_a, icmp_check_arrival_p, ["3. STP"], 1)),
