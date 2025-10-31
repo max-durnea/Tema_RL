@@ -216,7 +216,7 @@ class FullNM(object):
 
 
     # Starts all routers with the except of routers in list wo
-    def start_routers(self, wo=[2]):
+    def start_routers(self, wo=[]):
         ifaces = ""
         for i in range(len(self.routers)):
             for j in range(i + 1, len(self.routers)):
@@ -375,7 +375,7 @@ def main(run_tests=False, run=None):
                 viz_cats.append(test.categories[0])
                 points[test.categories[0]] = 0
                 if test.categories[0] == '3. STP':
-                    nm.start_routers([0,1])
+                    nm.start_routers([0,1,2])
 
 
             skipped = False
