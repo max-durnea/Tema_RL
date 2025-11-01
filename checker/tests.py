@@ -317,8 +317,8 @@ TESTS = OrderedDict([
 
         # STP tests
         ("ICMP_4_1_ARRIVES_1_STP", Test(4, 1, 0, icmp_a, icmp_check_arrival_p, ["3. STP"], 1)),
-        ("ICMP_5_0_ARRIVES_0_STP", Test(5, 0, 0, icmp_a, icmp_check_arrival_p, ["3. STP"], 0)),
-        ("ICMP_5_0_BAD_MAC_ARRIVES_0_ONCE_STP", Test(5, 0, 0, bad_mac_icmp_a, bad_icmp_check_arrival_p, ["3. STP"], 0)),
+        ("ICMP_3_5_ARRIVES_3_STP", Test(3, 3, 0, icmp_a, icmp_check_arrival_p, ["3. STP"], 5)),
+        ("ICMP_3_5_BAD_MAC_ARRIVES_5_ONCE_STP", Test(3, 5, 0, bad_mac_icmp_a, bad_icmp_check_arrival_p, ["3. STP"], 5)),
 
         ])
 
