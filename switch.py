@@ -108,6 +108,9 @@ def main():
     for interface in interfaces:
         int_real = get_interface_name(interface)
         name_to_id[int_real]=interface
+    print(ports_config)
+    print(priority)
+    print(switch_id)
     for name, info in ports_config.items():
         if name in name_to_id:
             idx = name_to_id[name]
@@ -144,9 +147,12 @@ def main():
         if interface not in interfacesDict:
             print(f"Warning: Received frame on unconfigured interface {interface}")
             continue
-        
+        print(f"Frame received on interface {interface} with mode {interfacesDict[interface]['mode']}")
+        print(interfacesDict)
         #interface_mode = interfacesDict[interface]["mode"]
-        if(ethertype==0x8200):
+        vlan_tag = (data[12] << 8) + data[13]
+        print(f"ethertype: {hex(vlan_tag)}")
+        if(vlan_tag==0x8200):
             # am primit de pe trunk
             cam_table[(src_mac,vlan_id)]=interface
             print_cam_table_contents()
@@ -217,6 +223,7 @@ def main():
                     ext_id = sum_nibbles(src_mac)
                     tagged_data = data[:12] + create_vlan_tag(ext_id,vlan_id) + data[12:]
                     forward_frame(dest_interface, tagged_data)
+        print()
             
 
 if __name__ == "__main__":
