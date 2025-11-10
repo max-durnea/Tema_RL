@@ -12,9 +12,9 @@ interfacesDict = {} # store in format {id:info}
 #Debug
 
 def print_cam_table_contents():
-    for k,v in cam_table.items() :
-        k = ':'.join(f'{b:02x}' for b in k)
-        print(f"For {k} port {v}")
+    for k,v in cam_table.items():
+        k_str = ':'.join(f'{b:02x}' for b in k[0])
+        print(f"For {k_str} VLAN {k[1]} port {v}")
 
 
 def parse_ethernet_header(data):
@@ -91,8 +91,12 @@ def sum_nibbles(source_mac_bytes):
     total = 0
     # adun ultimii 4 biti(de la dreapta) cu primii 4(de la stanga)
     for b in source_mac_bytes:
-        total+=b&0x0F+b>>4
-    return total&0x0F
+        total += (b & 0x0F) + (b >> 4)
+    return total & 0x0F
+
+def is_multicast(mac):
+    # Check if the least significant bit of the first byte is set
+    return (mac[0] & 0x01) == 1
 
 def main():
     # init returns the max interface number. Our interfaces
@@ -115,7 +119,7 @@ def main():
     print("[INFO] Switch MAC", ':'.join(f'{b:02x}' for b in get_switch_mac()))
     # print the interface table
     print("\n=== Port Configuration Table ===")
-    for idx, info in ports.items():
+    for idx, info in interfacesDict.items():
         print(f"Port {idx} ({get_interface_name(idx)}): {info}")
     print("================================\n")
 
@@ -136,37 +140,40 @@ def main():
 
         dest_mac, src_mac, ethertype, vlan_id, vlan_tci = parse_ethernet_header(data)
         
+        # Check if interface is configured
+        if interface not in interfacesDict:
+            print(f"Warning: Received frame on unconfigured interface {interface}")
+            continue
+        
+        #interface_mode = interfacesDict[interface]["mode"]
         if(ethertype==0x8200):
             # am primit de pe trunk
             cam_table[(src_mac,vlan_id)]=interface
             print_cam_table_contents()
             #Try forward the frame
             dest_interface = check_mac_in_cam_table((dest_mac,vlan_id))
+            # trimitem pentru toate interfetele din acelasi vlan si trunkuri
             if dest_interface == -1:
                 for i in interfaces:
                     if i != interface:
-                        if "vlan" in interfacesDict[i] and interfacesDict[i]["vlan"]==vlan_id:
+                        if interfacesDict[i]["mode"]=="access" and interfacesDict[i]["vlan"]==vlan_id:
                             new_data = data[:12] + data[16:]
                             forward_frame(i, new_data)
                         elif interfacesDict[i]["mode"]=="trunk":
                             forward_frame(i, data)
+            # am gasit destinatia in tabela, daca e trunk trimitem asa cum e daca e access scoatem tagul
             else:
-                # am gasit destinatia in tabela
-                if "vlan" in interfacesDict[dest_interface]:
-                    if interfacesDict[dest_interface]["vlan"]==vlan_id:
-                        new_data = data[:12] + data[16:]
-                        forward_frame(dest_interface, new_data)
-                elif interfacesDict[dest_interface]["mode"]=="trunk":
+                if interfacesDict[dest_interface]["mode"]== "access":
+                    if not is_multicast(dest_mac):
+                        nibble_sum = sum_nibbles(dest_mac)
+                        ext_id_from_frame = (vlan_tci >> 12) & 0x0F
+                        if nibble_sum != ext_id_from_frame:
+                            print(f"Dropping frame: nibble sum mismatch ({nibble_sum} != {ext_id_from_frame})")
+                            continue
+                    new_data = data[:12] + data[16:]
+                    forward_frame(dest_interface, new_data)
+                elif interfacesDict[dest_interface]["mode"]== "trunk":
                     forward_frame(dest_interface, data)
-                        
-
-
-
-
-
-
-
-
 
             dest_mac = ':'.join(f'{b:02x}' for b in dest_mac)
             src_mac = ':'.join(f'{b:02x}' for b in src_mac)
@@ -187,8 +194,8 @@ def main():
             # data is of type bytes.
             # send_to_link(i, length, data)
         else:
-            # no vlan
-            # vlan_id = -1
+            # Received from access port - get VLAN ID from interface config
+            vlan_id = interfacesDict[interface]["vlan"]
             cam_table[(src_mac,vlan_id)]=interface
             print_cam_table_contents()
             dest_interface = check_mac_in_cam_table((dest_mac,vlan_id))
@@ -196,10 +203,21 @@ def main():
                 # Flood
                 for i in interfaces:
                     if i != interface:
-                        forward_frame(i, data)
+                        if interfacesDict[i]["mode"]=="access" and interfacesDict[i]["vlan"]==vlan_id:
+                            forward_frame(i, data)
+                        elif interfacesDict[i]["mode"]=="trunk":
+                            # need to add vlan tag
+                            ext_id = sum_nibbles(src_mac)
+                            new_data = data[:12] + create_vlan_tag(ext_id,vlan_id) + data[12:]
+                            forward_frame(i, new_data)
             else:
-                forward_frame(dest_interface, data)
-
+                if interfacesDict[dest_interface]["mode"]== "access":
+                    forward_frame(dest_interface, data)
+                elif interfacesDict[dest_interface]["mode"]== "trunk":
+                    ext_id = sum_nibbles(src_mac)
+                    tagged_data = data[:12] + create_vlan_tag(ext_id,vlan_id) + data[12:]
+                    forward_frame(dest_interface, tagged_data)
+            
 
 if __name__ == "__main__":
     main()
