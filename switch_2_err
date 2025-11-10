@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/student/Desktop/tema1-public/switch.py", line 230, in <module>
+    main()
+  File "/home/student/Desktop/tema1-public/switch.py", line 105, in main
+    priority,ports_config = parse_switch_config(f"switch{switch_id}.cfg")
+  File "/home/student/Desktop/tema1-public/switch.py", line 70, in parse_switch_config
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'switch2.cfg'
