@@ -49,7 +49,7 @@ int send_to_link(int intidx, char *frame_data, size_t len)
 	 */
 	int ret;
 	ret = write(interfaces[intidx], frame_data, len);
-	DIE(ret == -1, "write");
+	//DIE(ret == -1, "write");
 	return ret;
 }
 

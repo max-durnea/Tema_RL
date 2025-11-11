@@ -218,6 +218,13 @@ def main():
                             forward_frame(i, new_data)
             else:
                 if interfacesDict[dest_interface]["mode"]== "access":
+                    # Check nibbles only if dest is in CAM and unicast
+                    if not is_multicast(dest_mac):
+                        nibble_sum = sum_nibbles(dest_mac)
+                        nibble_sum_src = sum_nibbles(src_mac)
+                        if nibble_sum != nibble_sum_src:
+                            print(f"Dropping frame: nibble sum mismatch ({nibble_sum} != {nibble_sum_src})")
+                            continue
                     forward_frame(dest_interface, data)
                 elif interfacesDict[dest_interface]["mode"]== "trunk":
                     ext_id = sum_nibbles(src_mac)
