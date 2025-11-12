@@ -16,6 +16,20 @@ r-0
 r-1
 rr-0-1
 rr-0-2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -47,6 +61,60 @@ Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -71,6 +139,8 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -89,6 +159,8 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -107,6 +179,58 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -125,6 +249,16 @@ Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -143,6 +277,52 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -150,6 +330,62 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -168,6 +404,16 @@ Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -186,6 +432,52 @@ For de:ad:be:ef:03:05 VLAN 1 port 0
 For de:ad:be:ef:05:03 VLAN 1 port 2
 For de:ad:be:ef:01:09 VLAN 1 port 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -209,6 +501,60 @@ Source MAC: de:ad:be:ef:09:01
 EtherType: 2054
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 1 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -242,6 +588,8 @@ For de:ad:be:ef:09:01 VLAN 1 port 2
 For de:ad:be:ef:02:07 VLAN 2 port 1
 For de:ad:be:ef:07:02 VLAN 2 port 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -256,6 +604,60 @@ Source MAC: de:ad:be:ef:07:02
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -266,6 +668,62 @@ For de:ad:be:ef:09:01 VLAN 1 port 2
 For de:ad:be:ef:02:07 VLAN 2 port 1
 For de:ad:be:ef:07:02 VLAN 2 port 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 0 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x800
@@ -276,20 +734,118 @@ For de:ad:be:ef:09:01 VLAN 1 port 2
 For de:ad:be:ef:02:07 VLAN 2 port 1
 For de:ad:be:ef:07:02 VLAN 2 port 2
 
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-For de:ad:be:ef:09:01 VLAN 1 port 2
-For de:ad:be:ef:02:07 VLAN 2 port 1
-For de:ad:be:ef:07:02 VLAN 2 port 2
-Destination MAC: ff:ff:ff:ff:ff:ff
-Source MAC: de:ad:be:ef:05:03
-EtherType: 2054
-Received frame of size 46 on interface 2
-
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -304,6 +860,62 @@ Source MAC: de:ad:be:ef:01:09
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -318,6 +930,60 @@ Source MAC: de:ad:be:ef:07:02
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -332,6 +998,70 @@ Source MAC: de:ad:be:ef:07:02
 EtherType: 2048
 Received frame of size 46 on interface 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
 Frame received on interface 2 with mode trunk
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x8200
@@ -356,6 +1086,16 @@ For de:ad:be:ef:09:01 VLAN 1 port 2
 For de:ad:be:ef:02:07 VLAN 2 port 1
 For de:ad:be:ef:07:02 VLAN 2 port 2
 
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
 Frame received on interface 1 with mode access
 {0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
 ethertype: 0x806
@@ -378,4 +1118,120 @@ For de:ad:be:ef:07:02 VLAN 2 port 2
 Destination MAC: de:ad:be:ef:02:07
 Source MAC: de:ad:be:ef:07:02
 EtherType: 2054
+Received frame of size 46 on interface 2
+
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Received HPDU on interface 3
+Received HPDU on interface 2
+Received HPDU on interface 2
+Received HPDU on interface 3
+Frame received on interface 2 with mode trunk
+{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
+ethertype: 0x8200
+For de:ad:be:ef:03:05 VLAN 1 port 0
+For de:ad:be:ef:05:03 VLAN 1 port 2
+For de:ad:be:ef:01:09 VLAN 1 port 2
+For de:ad:be:ef:09:01 VLAN 1 port 2
+For de:ad:be:ef:02:07 VLAN 2 port 1
+For de:ad:be:ef:07:02 VLAN 2 port 2
+Destination MAC: de:ad:be:ef:00:09
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2048
 Received frame of size 46 on interface 2

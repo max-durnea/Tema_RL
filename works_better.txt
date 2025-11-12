@@ -132,13 +132,19 @@ def ext_id_matches(vlan_tci, dest_mac_str, expected_ext):
     ext_id_from_frame = (vlan_tci >> 12) & 0xF
     if expected_ext is None:
         return True
-    return ext_id_from_frame == expected_ext
+    match = ext_id_from_frame == expected_ext
+    if not match:
+        print(f"[EXT-MISMATCH] frame_ext={ext_id_from_frame} expected_ext={expected_ext} dest_mac={dest_mac_str} vlan_tci=0x{vlan_tci:04x}")
+    else:
+        print(f"[EXT-MATCH] frame_ext={ext_id_from_frame} expected_ext={expected_ext} dest_mac={dest_mac_str}")
+    return match
 
 
 def verifica_mac_table(src_mac_str, vlan, port):
     key = (src_mac_str, vlan)
     if cam_table.get(key) != port:
         cam_table[key] = port
+        print(f"[CAM] Learned {src_mac_str} on VLAN {vlan} -> port {port}")
 
     return True
 
@@ -609,8 +615,7 @@ def main():
             handle_received_ppdu(interface, data)
             continue
 
-        # STP blocking only applies to trunk ports, not access ports (edge ports)
-        if interfacesDict[interface]["mode"] == "trunk" and not port_is_forwarding(interface):
+        if not port_is_forwarding(interface):
             print(f"Port {interface} is blocking; dropping data frame")
             continue
 
@@ -633,8 +638,7 @@ def main():
                     if i != interface:
                         if i not in interfacesDict:
                             continue
-                        # STP blocking only applies to trunk ports
-                        if interfacesDict[i]["mode"] == "trunk" and not port_is_forwarding(i):
+                        if not port_is_forwarding(i):
                             continue
                         if interfacesDict[i]["mode"] == "access" and interfacesDict[i]["vlan"] == vlan_id:
                             expected_ext = port_host_ext.get(i)
@@ -646,8 +650,7 @@ def main():
                             forward_frame(i, data)
             # am gasit destinatia in tabela, daca e trunk trimitem asa cum e daca e access scoatem tagul
             else:
-                # STP blocking only applies to trunk ports
-                if interfacesDict[dest_interface]["mode"] == "trunk" and not port_is_forwarding(dest_interface):
+                if not port_is_forwarding(dest_interface):
                     print(f"Destination port {dest_interface} blocking; dropping frame")
                     continue
                 if interfacesDict[dest_interface]["mode"] == "access":
@@ -691,13 +694,12 @@ def main():
                     if i != interface:
                         if i not in interfacesDict:
                             continue
-                        # STP blocking only applies to trunk ports
-                        if interfacesDict[i]["mode"] == "trunk" and not port_is_forwarding(i):
+                        if not port_is_forwarding(i):
                             continue
                         if interfacesDict[i]["mode"] == "access" and interfacesDict[i]["vlan"] == vlan_id:
                             if not dest_is_multicast:
                                 expected_ext = port_host_ext.get(i)
-                                if expected_ext is not None and expected_ext != ext_id_src:
+                                if expected_ext is not None and expected_ext != dest_ext:
                                     continue
                             forward_frame(i, data)
                         elif interfacesDict[i]["mode"] == "trunk":
@@ -705,14 +707,13 @@ def main():
                             new_data = data[:12] + create_vlan_tag(ext_id_src, vlan_id) + data[12:]
                             forward_frame(i, new_data)
             else:
-                # STP blocking only applies to trunk ports
-                if interfacesDict[dest_interface]["mode"] == "trunk" and not port_is_forwarding(dest_interface):
+                if not port_is_forwarding(dest_interface):
                     print(f"Destination port {dest_interface} blocking; dropping frame")
                     continue
                 if interfacesDict[dest_interface]["mode"] == "access":
                     if not dest_is_multicast:
                         expected_ext = port_host_ext.get(dest_interface)
-                        if expected_ext is not None and expected_ext != ext_id_src:
+                        if expected_ext is not None and expected_ext != dest_ext:
                             print("Dropping frame: VLAN extension mismatch for learned destination")
                             continue
                     forward_frame(dest_interface, data)
