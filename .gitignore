@@ -2,3 +2,4 @@ __pycache__
 sim/__pycache__
 *.so
 *.o
+hosts_output/
