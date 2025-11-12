@@ -6,7 +6,7 @@ import threading
 import time
 from wrapper import recv_from_any_link, send_to_link, get_switch_mac, get_interface_name
 
-DST_STP_MAC = b'\x01\x80\xc2\x00\x00\x00'  
+DST_STP_MAC = b'\x01\x80\xc2\x00\x00\x00'
 LINK_COST = 19
 PORT_PRIORITY = 0x80
 
@@ -20,7 +20,7 @@ def build_bridge_id(priority, mac_bytes):
 
 
 def init_stp(interfaces, port_types, priority, switch_mac):
-    """Inițializează structura STP globală."""
+    """Initialize STP state."""
     stp = {}
     stp["interfaces"] = list(interfaces)
     stp["port_types"] = port_types
@@ -47,7 +47,7 @@ def lowest_port_id(stp):
 
 
 def handle_bpdu(stp, interface, root_id, root_cost, bridge_id, port_id):
-    """Actualizează informațiile despre un vecin și decide root-ul."""
+    """Update neighbor info with received BPDU and recompute root."""
     if stp["port_types"].get(interface) != "trunk":
         return
     stp["neighbor_info"][interface] = {
@@ -61,7 +61,7 @@ def handle_bpdu(stp, interface, root_id, root_cost, bridge_id, port_id):
 
 
 def select_root(stp):
-    """Alege cel mai bun root bridge și portul root."""
+    """Select the best root bridge and root port."""
     best_tuple = (stp["bridge_id"], 0, stp["bridge_id"], lowest_port_id(stp))
     best_port = None
 
@@ -84,7 +84,7 @@ def select_root(stp):
 
 
 def update_port_states(stp):
-    """Setează starea (forwarding / blocking) pentru fiecare port."""
+    """Set the STP state (forwarding/blocking) for each port."""
     for port in stp["interfaces"]:
         if stp["port_types"].get(port) != "trunk":
             stp["port_states"][port] = "forwarding"
@@ -132,51 +132,43 @@ def build_ppdu_frame(stp, seq_no, interface):
     src_mac = stp["mac"]
     return build_ppdu(src_mac, seq_no, root_id, root_cost, bridge_id, port_id)
 
+
 def parse_ethernet_header(data):
-    # Unpack the header fields from the byte array
-    #dest_mac, src_mac, ethertype = struct.unpack('!6s6sH', data[:14])
     dest_mac = data[0:6]
     src_mac = data[6:12]
-
-    # Extract ethertype. Under 802.1Q, this may be the bytes from the VLAN TAG
     ether_type = (data[12] << 8) + data[13]
 
     vlan_id = -1
     vlan_tci = -1
-    # Check for VLAN tag (0x8200 in network byte order is b'\x82\x00')
     if ether_type == 0x8200:
         vlan_tci = int.from_bytes(data[14:16], byteorder='big')
-        vlan_id = vlan_tci & 0x0FFF  # extract the 12-bit VLAN ID
+        vlan_id = vlan_tci & 0x0FFF
         ether_type = (data[16] << 8) + data[17]
 
     return dest_mac, src_mac, ether_type, vlan_id, vlan_tci
 
+
 def create_vlan_tag(ext_id, vlan_id):
-    # Use EtherType = 8200h for our custom 802.1Q-like protocol.
-    # PCP and DEI bits are used to extend the original VID.
-    #
-    # The ext_id should be the sum of all nibbles in the MAC address of the
-    # host attached to the _access_ port. Ignore the overflow in the 4-bit
-    # accumulator.
-    #
-    # NOTE: Include these 4 extensions bits only in the check for unicast
-    #       frames. For multicasts, assume that you're dealing with 802.1Q.
-    return struct.pack('!H', 0x8200) + \
-           struct.pack('!H', ((ext_id & 0xF) << 12) | (vlan_id & 0x0FFF))
+    return struct.pack('!H', 0x8200) + struct.pack(
+        '!H', ((ext_id & 0xF) << 12) | (vlan_id & 0x0FFF)
+    )
 
 
 def function_on_different_thread():
     while True:
         time.sleep(1)
 
+
 def verifica_mac_table(mac_table, src_mac, vlan, port):
     key = (src_mac, vlan)
     if mac_table.get(key) != port:
         mac_table[key] = port
 
+
 def is_multicast_mac(mac):
     first_octet = int(mac.split(':')[0], 16)
     return (first_octet & 1) == 1
+
 
 def should_check_extension(vlan_tci, dest_mac):
     return vlan_tci != -1 and not is_multicast_mac(dest_mac)
@@ -191,13 +183,24 @@ def ext_id_matches(vlan_tci, dest_mac, expected_ext):
     return ext_id_from_frame == expected_ext
 
 
-def forwarding(mac_table, dest_mac, port_src, interfaces, data, vlan, port_types,
-               access_vlan, vlan_tci, stp_manager, port_host_ext):
-    if dest_mac != "ff:ff:ff:ff:ff:ff": 
-        if (dest_mac, vlan) in mac_table:  # unicast1
-            port_dst=mac_table[(dest_mac, vlan)]
+def forwarding(
+    mac_table,
+    dest_mac,
+    port_src,
+    interfaces,
+    data,
+    vlan,
+    port_types,
+    access_vlan,
+    vlan_tci,
+    stp_manager,
+    port_host_ext,
+):
+    if dest_mac != "ff:ff:ff:ff:ff:ff":
+        if (dest_mac, vlan) in mac_table:
+            port_dst = mac_table[(dest_mac, vlan)]
             if port_dst != port_src:
-                if port_types.get(port_dst) == 'access':
+                if port_types.get(port_dst) == "access":
                     if access_vlan.get(port_dst) == vlan:
                         expected_ext = port_host_ext.get(port_dst)
                         if not ext_id_matches(vlan_tci, dest_mac, expected_ext):
@@ -206,14 +209,12 @@ def forwarding(mac_table, dest_mac, port_src, interfaces, data, vlan, port_types
                             data_out = data[0:12] + data[16:]
                         else:
                             data_out = data
-                        send_to_link(port_dst,len(data_out),data_out)
-                # else:  # trunk
-                #     send_to_link(port_dst,len(data),data)
-                elif port_types.get(port_dst) == 'trunk':
+                        send_to_link(port_dst, len(data_out), data_out)
+                elif port_types.get(port_dst) == "trunk":
                     if not is_forwarding_port(stp_manager, port_dst):
                         return
                     send_to_link(port_dst, len(data), data)
-        else: #flood
+        else:
             for o in sorted(interfaces):
                 if o != port_src:
                     if port_types.get(o) == "trunk":
@@ -224,13 +225,12 @@ def forwarding(mac_table, dest_mac, port_src, interfaces, data, vlan, port_types
                         expected_ext = port_host_ext.get(o)
                         if not ext_id_matches(vlan_tci, dest_mac, expected_ext):
                             continue
-                        # access în acelasi VLAN -> scoate tag
                         if vlan_tci != -1:
                             data_out = data[0:12] + data[16:]
                         else:
                             data_out = data
                         send_to_link(o, len(data_out), data_out)
-    else:   #broadcast
+    else:
         for o in sorted(interfaces):
             if o != port_src:
                 if port_types.get(o) == "trunk":
@@ -241,7 +241,6 @@ def forwarding(mac_table, dest_mac, port_src, interfaces, data, vlan, port_types
                     expected_ext = port_host_ext.get(o)
                     if not ext_id_matches(vlan_tci, dest_mac, expected_ext):
                         continue
-                    # access în acelasi VLAN -> scoate tag
                     if vlan_tci != -1:
                         data_out = data[0:12] + data[16:]
                     else:
@@ -254,8 +253,9 @@ def calc_suma_nibbles(mac):
     suma = 0
     for b in mac_nou:
         suma += int(b, 16)
-    result = suma%16
-    return result # returneaza doar ultimii 4 biti ai sumei
+    result = suma % 16
+    return result
+
 
 def citeste_vlan(switch_id, name_to_interface):
     port_types = {}
@@ -263,7 +263,7 @@ def citeste_vlan(switch_id, name_to_interface):
     priority = 32768
 
     filename = f"configs/switch{switch_id}.cfg"
-    with open (filename) as f:
+    with open(filename) as f:
         lines = [line.strip() for line in f if line.strip()]
         priority = int(lines[0])
         for line in lines[1:]:
@@ -288,27 +288,21 @@ def citeste_vlan(switch_id, name_to_interface):
 
     return port_types, access_vlan, priority
 
+
 def build_hpdu(src_mac):
-    # Ethernet frame cu type 0x0800 + payload 0xFF
     eth_type = struct.pack('!H', 0x0800)
     payload = bytes([0xFF])
     return DST_STP_MAC + src_mac + eth_type + payload
 
+
 def build_ppdu(src_mac, seq_no, root_id, root_cost, bridge_id_value, port_id):
-    # Ethernet header
     eth_hdr = DST_STP_MAC + src_mac + struct.pack('!H', 0x0026)
-
-    # LLC Header
     llc_hdr = struct.pack('!BBB', 0x42, 0x42, 0x03)
-
-    # PPDU Header
     ppdu_hdr = struct.pack('!HBBI', 0x0002, 0, 0x80, seq_no)
 
     flags = 0
     bridge_id = bridge_id_value.to_bytes(8, byteorder='big')
-    # Inițial root bridge = self
     root_bridge = root_id.to_bytes(8, byteorder='big')
-    # PPDU Config (default valori din enunț)
     root_path_cost = struct.pack('!I', root_cost)
     port_identifier = struct.pack('!H', port_id & 0xFFFF)
     message_age = struct.pack('!H', 0)
@@ -316,11 +310,21 @@ def build_ppdu(src_mac, seq_no, root_id, root_cost, bridge_id_value, port_id):
     hello_time = struct.pack('!H', 2)
     forward_delay = struct.pack('!H', 15)
 
-    ppdu_config = struct.pack('!B', flags) + root_bridge + root_path_cost + \
-                  bridge_id + port_identifier + message_age + max_age + hello_time + forward_delay
+    ppdu_config = (
+        struct.pack('!B', flags)
+        + root_bridge
+        + root_path_cost
+        + bridge_id
+        + port_identifier
+        + message_age
+        + max_age
+        + hello_time
+        + forward_delay
+    )
 
     payload = llc_hdr + ppdu_hdr + ppdu_config
     return eth_hdr + payload
+
 
 def send_stp_frames(interfaces, stp_manager):
     mac = stp_manager["mac"]
@@ -329,11 +333,9 @@ def send_stp_frames(interfaces, stp_manager):
 
     while True:
         for iface in interfaces:
-            # Trimitem HPDU
             hpdu = build_hpdu(src_mac)
             send_to_link(iface, len(hpdu), hpdu)
 
-            # Trimitem PPDU
             ppdu = build_ppdu_frame(stp_manager, seq, iface)
             send_to_link(iface, len(ppdu), ppdu)
 
@@ -368,9 +370,8 @@ def handle_stp_frame(interface, data, stp_manager):
     root_id, root_cost, bridge_id, port_id = parsed
     handle_bpdu(stp_manager, interface, root_id, root_cost, bridge_id, port_id)
 
+
 def main():
-    # init returns the max interface number. Our interfaces
-    # are 0, 1, 2, ..., init_ret value + 1
     switch_id = sys.argv[1]
 
     num_interfaces = wrapper.init(sys.argv[2:])
@@ -380,12 +381,6 @@ def main():
     print("# Starting switch with id {}".format(switch_id), flush=True)
     print("[INFO] Switch MAC", ':'.join(f'{b:02x}' for b in switch_mac))
 
-
-    # Example of running a function on a separate thread.
-    # t = threading.Thread(target=function_on_different_thread)
-    # t.start()
-
-    # Printing interface names
     name_to_interface = {}
     for i in interfaces:
         name = get_interface_name(i)
@@ -395,29 +390,27 @@ def main():
     port_types, access_vlan, priority = citeste_vlan(switch_id, name_to_interface)
     print("[CONFIG] Port types:", port_types)
     print("[CONFIG] Access VLAN:", access_vlan)
-    
-    mac_table={}
+
+    mac_table = {}
     port_host_ext = {}
     stp_manager = init_stp(interfaces, port_types, priority, switch_mac)
-    threading.Thread(target=send_stp_frames, args=(interfaces, stp_manager), daemon=True).start()
+    threading.Thread(
+        target=send_stp_frames, args=(interfaces, stp_manager), daemon=True
+    ).start()
 
     while True:
-        # Note that data is of type bytes([...]).
-        # b1 = bytes([72, 101, 108, 108, 111])  # "Hello"
-        # b2 = bytes([32, 87, 111, 114, 108, 100])  # " World"
-        # b3 = b1[0:2] + b[3:4].
         interface, data, length = recv_from_any_link()
 
-        dest_mac_bytes, src_mac_bytes, ethertype, vlan_id, vlan_tci = parse_ethernet_header(data)
+        dest_mac_bytes, src_mac_bytes, ethertype, vlan_id, vlan_tci = parse_ethernet_header(
+            data
+        )
         if dest_mac_bytes == DST_STP_MAC:
             handle_stp_frame(interface, data, stp_manager)
             continue
 
-        # Print the MAC src and MAC dst in human readable format
         dest_mac = ':'.join(f'{b:02x}' for b in dest_mac_bytes)
         src_mac = ':'.join(f'{b:02x}' for b in src_mac_bytes)
 
-        # determin VLAN-ul pentru portul curent
         ext_id_src = None
         if port_types.get(interface) == "access":
             vlan = access_vlan.get(interface)
@@ -430,10 +423,11 @@ def main():
         if vlan is None:
             continue
 
-        if port_types.get(interface) == "trunk" and not is_forwarding_port(stp_manager, interface):
+        if port_types.get(interface) == "trunk" and not is_forwarding_port(
+            stp_manager, interface
+        ):
             continue
 
-        # Adaug VLAN tag dacă lipsește
         if port_types.get(interface) == "access" and vlan_id == -1:
             if ext_id_src is None:
                 ext_id_src = calc_suma_nibbles(src_mac)
@@ -441,32 +435,30 @@ def main():
             data = data[0:12] + tag + data[12:]
             vlan_tci = int.from_bytes(tag[2:4], byteorder='big')
 
-        # Note. Adding a VLAN tag can be as easy as
-        # tagged_frame = data[0:12] + create_vlan_tag(5, 10) + data[12:]
-
         print(f'Destination MAC: {dest_mac}')
         print(f'Source MAC: {src_mac}')
         print(f'EtherType: {ethertype}')
 
         print("Received frame of size {} on interface {}".format(length, interface), flush=True)
 
-        # if vlan == -1:
-        #     vlan=0
-
-        # TODO: Implement forwarding with learning
         verifica_mac_table(mac_table, src_mac, vlan, interface)
-        forwarding(mac_table, dest_mac, interface, interfaces, data, vlan, port_types,
-                   access_vlan, vlan_tci, stp_manager, port_host_ext)
+        forwarding(
+            mac_table,
+            dest_mac,
+            interface,
+            interfaces,
+            data,
+            vlan,
+            port_types,
+            access_vlan,
+            vlan_tci,
+            stp_manager,
+            port_host_ext,
+        )
         print("[TABLE]", mac_table, flush=True)
-
-        # TODO: Implement VLAN support
-        # TODO: Implement STP support
-
-        # data is of type bytes.
-        # send_to_link(i, length, data)
-        # stp_thread = threading.Thread(target=send_stp_frames, args=(interfaces, priority), daemon=True)
-        # stp_thread.start()
 
 
 if __name__ == "__main__":
     main()
+
+ 
