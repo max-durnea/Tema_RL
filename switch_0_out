@@ -1,234 +1,164 @@
 Initializing the switch
-{'r-0': {'mode': 'access', 'vlan': 1}, 'r-1': {'mode': 'access', 'vlan': 2}, 'rr-0-1': {'mode': 'trunk'}, 'rr-0-2': {'mode': 'trunk'}}
-14
-0
 # Starting switch with id 0
 [INFO] Switch MAC de:fe:c8:ed:00:00
-
-=== Port Configuration Table ===
-Port 0 (r-0): {'mode': 'access', 'vlan': 1}
-Port 1 (r-1): {'mode': 'access', 'vlan': 2}
-Port 2 (rr-0-1): {'mode': 'trunk'}
-Port 3 (rr-0-2): {'mode': 'trunk'}
-================================
-
 r-0
 r-1
 rr-0-1
 rr-0-2
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
+[CONFIG] Port types: {0: 'access', 1: 'access', 2: 'trunk', 3: 'trunk'}
+[CONFIG] Access VLAN: {0: 1, 1: 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0}
 Destination MAC: ff:ff:ff:ff:ff:ff
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2}
 Destination MAC: de:ad:be:ef:03:05
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2}
 Destination MAC: ff:ff:ff:ff:ff:ff
 Source MAC: de:ad:be:ef:01:09
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: ff:ff:ff:ff:ff:ff
 Source MAC: de:ad:be:ef:01:09
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: ff:ff:ff:ff:ff:ff
 Source MAC: de:ad:be:ef:01:09
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: de:ad:be:ef:03:05
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: de:ad:be:ef:03:05
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: de:ad:be:ef:03:05
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2048
 Received frame of size 46 on interface 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: de:ad:be:ef:03:05
 Source MAC: de:ad:be:ef:05:03
 EtherType: 2054
 Received frame of size 46 on interface 2
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x806
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
 Destination MAC: de:ad:be:ef:09:01
 Source MAC: de:ad:be:ef:01:09
 EtherType: 2048
 Received frame of size 46 on interface 2
-
-Frame received on interface 1 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-For de:ad:be:ef:02:07 VLAN 2 port 1
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-For de:ad:be:ef:02:07 VLAN 2 port 1
-
-Frame received on interface 0 with mode access
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x800
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-For de:ad:be:ef:02:07 VLAN 2 port 1
-
-Frame received on interface 2 with mode trunk
-{0: {'mode': 'access', 'vlan': 1}, 1: {'mode': 'access', 'vlan': 2}, 2: {'mode': 'trunk'}, 3: {'mode': 'trunk'}}
-ethertype: 0x8200
-For de:ad:be:ef:03:05 VLAN 1 port 0
-For de:ad:be:ef:05:03 VLAN 1 port 2
-For de:ad:be:ef:01:09 VLAN 1 port 2
-For de:ad:be:ef:02:07 VLAN 2 port 1
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:09:01
+EtherType: 2054
+Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2}
+Destination MAC: de:ad:be:ef:07:02
+Source MAC: de:ad:be:ef:02:07
+EtherType: 2048
+Received frame of size 42 on interface 1
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2054
+Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:07:02
+Source MAC: de:ad:be:ef:02:07
+EtherType: 2054
+Received frame of size 42 on interface 1
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:02:07
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:02:07
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
 Destination MAC: de:ad:be:ef:07:02
 Source MAC: de:ad:be:ef:01:09
 EtherType: 2048
 Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:09:01
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}
+Destination MAC: de:ad:be:ef:03:05
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 46 on interface 2
+[TABLE] {('de:ad:be:ef:03:05', 1): 0, ('de:ad:be:ef:05:03', 1): 2, ('de:ad:be:ef:01:09', 1): 2, ('de:ad:be:ef:09:01', 1): 2, ('de:ad:be:ef:02:07', 2): 1, ('de:ad:be:ef:07:02', 2): 2}

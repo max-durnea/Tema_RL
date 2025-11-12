@@ -1,0 +1,99 @@
+Initializing the switch
+# Starting switch with id 2
+[INFO] Switch MAC de:fe:c8:ed:02:04
+r-0
+r-1
+rr-0-2
+rr-1-2
+[CONFIG] Port types: {0: 'access', 1: 'access', 3: 'trunk', 2: 'trunk'}
+[CONFIG] Access VLAN: {0: 2, 1: 1}
+Destination MAC: de:ad:be:ef:05:03
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:05:03
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3}
+Destination MAC: de:ad:be:ef:09:01
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:09:01
+EtherType: 2054
+Received frame of size 42 on interface 1
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1}
+Destination MAC: de:ad:be:ef:09:01
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1}
+Destination MAC: de:ad:be:ef:01:09
+Source MAC: de:ad:be:ef:09:01
+EtherType: 2048
+Received frame of size 42 on interface 1
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1}
+Destination MAC: de:ad:be:ef:07:02
+Source MAC: de:ad:be:ef:02:07
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3}
+Destination MAC: ff:ff:ff:ff:ff:ff
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2054
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:07:02
+Source MAC: de:ad:be:ef:02:07
+EtherType: 2054
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:02:07
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:02:07
+Source MAC: de:ad:be:ef:03:05
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:07:02
+Source MAC: de:ad:be:ef:01:09
+EtherType: 2048
+Received frame of size 46 on interface 3
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:09:01
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
+Destination MAC: de:ad:be:ef:03:05
+Source MAC: de:ad:be:ef:07:02
+EtherType: 2048
+Received frame of size 42 on interface 0
+[TABLE] {('de:ad:be:ef:03:05', 1): 3, ('de:ad:be:ef:05:03', 1): 3, ('de:ad:be:ef:01:09', 1): 3, ('de:ad:be:ef:09:01', 1): 1, ('de:ad:be:ef:02:07', 2): 3, ('de:ad:be:ef:07:02', 2): 0}
